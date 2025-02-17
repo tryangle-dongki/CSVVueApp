@@ -50,7 +50,7 @@ async function uploadFile() {
     const result = await response.json()
     uploadedFileName.value = result.fileName
     uploadStatus.value = 'ファイルが正常にアップロードされました！'
-  } catch (error) {
+  } catch (error: any) {
     uploadStatus.value = `Error: ${error.message}`
   }
 }
