@@ -12,7 +12,7 @@ const props = defineProps({
   }
 })
 
-// 서버에서 처리된 CSV 파일 다운로드
+// サーバーから処理されたCSVファイルをダウンロードする
 async function downloadFile() {
   const fileName = props.fileName
 

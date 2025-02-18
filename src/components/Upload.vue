@@ -13,14 +13,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import DownloadButton from './Download.vue' // Download.vue 임포트
+import DownloadButton from './Download.vue' // ダウンロードボタンコンポーネントをインポート
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 const file = ref<File | null>(null)
 const uploadStatus = ref<string | null>(null)
 const uploadedFileName = ref<string | null>(null)
 
-// 파일 선택 시 저장
+// ファイル選択時の処理
 function handleFileUpload(event: Event) {
   const input = event.target as HTMLInputElement
   if (input.files && input.files[0]) {
@@ -28,7 +28,7 @@ function handleFileUpload(event: Event) {
   }
 }
 
-// 서버로 CSV 파일 업로드
+// サーバーにCSVファイルをアップロードする
 async function uploadFile() {
   if (!file.value) {
     uploadStatus.value = 'ファイルが選択されていません。'

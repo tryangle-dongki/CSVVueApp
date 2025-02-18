@@ -5,7 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import Upload from './components/Upload.vue'  // Upload.vue 임포트
+// Uploadコンポーネントをインポート
+import Upload from './components/Upload.vue'
 </script>
 
 <style>
