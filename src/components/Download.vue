@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 const props = defineProps({
   fileName: {
     type: String,
@@ -18,7 +18,7 @@ async function downloadFile() {
 
   console.log('fileName:', fileName);
 
-  const response = await fetch(`https://csv-handler-app-erhrhfh6hfecbdaf.japaneast-01.azurewebsites.net/api/File/download/${fileName}`, {
+  const response = await fetch(`${apiBaseUrl}/api/File/download/${fileName}`, {
     method: 'GET'
   })
 

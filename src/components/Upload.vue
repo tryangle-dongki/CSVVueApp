@@ -15,6 +15,7 @@
 import { ref } from 'vue'
 import DownloadButton from './Download.vue' // Download.vue 임포트
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 const file = ref<File | null>(null)
 const uploadStatus = ref<string | null>(null)
 const uploadedFileName = ref<string | null>(null)
@@ -38,7 +39,7 @@ async function uploadFile() {
   formData.append('file', file.value)
 
   try {
-    const response = await fetch('https://csv-handler-app-erhrhfh6hfecbdaf.japaneast-01.azurewebsites.net/api/File/upload', {
+    const response = await fetch(`${apiBaseUrl}/api/File/upload`, {
       method: 'POST',
       body: formData,
     })
